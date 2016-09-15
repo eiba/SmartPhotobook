@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<%include templates/header.ejs%>
+<div class="container body-content">
+<h1><%= title %></h1>
+<p>Uploaded image(s):</p>
+    <hr>
+    <%if(images == null){%>
+    <p>
+        No images was uploaded
+    </p>
+    <%} else{%>
+    <% images.forEach(function(image){ %>
+        <div class="col-md-3 uploadDiv">
+        <div class="list-group">
+            <div class="imgPadd">
+            <img width=200 class="imgShadow padd3" src='<%- image.image%>'>
+            </div>
+            <br>
+            Detections:
+    <%(image.tags).forEach(function(tag){%>
+
+            <a class="list-group-item bradius"><%=tag%></a>
+
+    <%});%>
+        </div>
+        </div>
+    <% }); %>
+    <%}%>
+    <div class="row">
+    <div class="col-md-12">
+    <hr>
+    <p>CAB432 project - Eirik Baug</p>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

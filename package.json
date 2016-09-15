@@ -1,0 +1,29 @@
+{
+  "name": "CloudComputingProj",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "bootstrap": "^3.3.7",
+    "browserify": "^13.1.0",
+    "cloudinary": "^1.4.1",
+    "coffeeify": "^2.0.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.4",
+    "fast-crc32c": "^1.0.4",
+    "flickrapi": "^0.6.0",
+    "google-cloud": "^0.39.0",
+    "imgur": "^0.1.7",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.1.0",
+    "minimatch": "^3.0.3",
+    "morgan": "~1.7.0",
+    "multer": "^1.2.0",
+    "serve-favicon": "~2.3.0"
+  }
+}

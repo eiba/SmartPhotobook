@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "celestial-digit-130223",
+  "private_key_id": "40b116021b1127d1d2af744cb573de06f1f952d2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDMu4vqQw7E9h+e\nYEbqD9IGYc8Ol0YBwXFkMEzPUGKLxujiZDDFk9ohrpGd5Ap78GsxeSb/C/pfzSEu\n4boVqMCHlZUq2hiPWryK7lZhmj5FR9sMjpDPyZbRXp9LVkUNK6cWXsQGnEVF2332\np6rFoGOBA0CP4lnOYclVBPd/bp5G7VAeiDAcQpb+0R/9to/VJLuB/kvKoMcKvP/F\ndS6zGNR28ZvhCV5G7FB5yRorHt9Phv1TSkitQks75y0AoCBmUsKOw2V5oSrADJLC\noxHHokpHHq4ac6a1HwhZD3FDgS6eiGdUcCQ/TrRhbyi3pS1NbDOquYa10FKQF1bx\nVLTsVFurAgMBAAECggEAZSpHePqp0anM9fWdFQu8PGsYZZ1aeoOcBGXZjpeqGmev\nrC7V6sukfgBE9EA67gNe9JNpMZ45mh1CyGfCC/HXMSg5DXO3rx6nC/+5r4EIRDO9\nifbol8SFQe//xrpaZKetaOBq/Nk7YcmT9M3lFMKsaJOy02aF+fVYByrtIYsHqwO2\n0e0D4+l42IF6SKBHA7SVgF0ar537mb8QHh59HYgprVRmb85gRiBBnliHygqNAl6r\nLBoVYB+suNwKyDRD4lUc0XZHGSvtUY/uNM2frFeykPGp/NcEOswGFBMoVD7wFEBQ\nNmN7AQpIsJIobdLP8jn3ydaviukVIUOq3CfdZZ0gAQKBgQDmFGUoOtvSkUCd4DIy\ngA4s8NnsdLWC6sVVYtrmAiGIa5SGugtj2+/cEUFf+/DPKeMQqdgbV1mgGtt47hKi\nMV32hKe61IN5QIusyml24ntoPn5eebZEKAxN11ZA8yGtVfSwx+CbMOSnvWUk9jly\nKTtLslEpDb6CT9rRJ0Sng0zsIQKBgQDjzCFXLXAnEYfCSdQtfZjjJPqsIuDOTw+e\nhKMs5Yp3IaPBpAuC20xUi70N5StZ6RbqjZQQCZmkW6oHxSczJpe2fEwKpjr8ZTeK\nW+0MRVi5vnllA+TWxh1Ym9ULEdVaLN/R8VZ7G4bPdsyZgrkn4FF1ma8/iofykoG9\nMJ5E9LVuSwKBgQDgblSegYucQwP8/Iz6pd8uB2MMPGwyYEBNojhU1Q9Qu2AOa7xg\nlFHNISfcMS4dZoaP4p1jTjmm64va0qBqhi1aItxaaqI0zLlyu59U0GgAr7UlAyTA\nJzCZXcxNXt0i8A3Xw6FcwLzKwvy+qVAwA/hLRo3Utgt3od2Y1+0oWfPXAQKBgQDE\nS7EnSFZutCKCf9BA6wwGIGWKU/vYjDRvauiZ1as+AVT1loD84DCkYk4lXSfAMKW4\ntQuzzjIBeaPJUlD3OPhfHjkArEIEIMx9g71/Z3qPhN1i+LoHgWzkYFRzV4i8ThMI\n/KiDKTNAL6UbW5RmElzfs/FaFewUUb9O4khgL2bwhQKBgArKrbJkyHtwqjtb1iXJ\njgfCTGFUe+sasqWCynlU03UukXWxlWvyBJ3vW8l540IXVDuxeVNtRLGMCHOi0noh\nLfGL9Ojnw0PYfoXH69RaPlVc/5quw4H7S0w5CFsoYYMtkPrXaka2jCzxLvZMwEGH\nM0xHOKjqMg0xxFzQfJDGnWBJ\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloudcomputingproject@celestial-digit-130223.iam.gserviceaccount.com",
+  "client_id": "100499850382850083464",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudcomputingproject%40celestial-digit-130223.iam.gserviceaccount.com"
+}

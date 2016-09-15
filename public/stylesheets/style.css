@@ -1,0 +1,234 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.color{
+  color: #ffffff !important;
+  margin-right: 30px;
+}
+.fsize{
+  font-size: 20px;
+}
+
+
+.padd{
+  padding-top:10px;
+}
+.padd2{
+  padding-left: 250px;
+}
+
+div.vertical-line{
+  width: 0px; /* Use only border style */
+  height: 100%;
+  float: left;
+  border: 1px inset; /* This is default border style for <hr> tag */
+}
+
+/*Image modal*/
+.image {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-height: 500px;
+  max-width: 640px;
+  z-index: 2;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, .caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: relative;
+  top: 0px;
+  right: 550px;
+  color: #ffffff;
+  background-color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+/** ajax loader*/
+.loader
+{
+	position: absolute;
+    right:950px;
+    bottom:10px;
+    width: 30px;
+	height: 30px;
+	border: 8px solid #fff;
+	border-right-color: transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 25px 2px #eee;
+    z-index: 999;
+}
+.loader
+{
+  animation: spin 1s linear infinite;
+}
+@keyframes spin
+{
+  from { transform: rotate(0deg);   opacity: 0.2; }
+  50%  { transform: rotate(180deg); opacity: 1.0; }
+  to   { transform: rotate(360deg); opacity: 0.2; }
+}
+
+#Slider .slider-selection {
+  background: #BABABA;
+}
+
+.uploadDiv {
+  border-radius: 15px 50px 30px;
+  border: 2px solid #000000;
+  margin:10px;
+  padding-top:20px;
+}
+.imgPadd{
+  padding-left:25px;
+}
+.imgShadow{
+  box-shadow: 0px 0px 10px #888;
+  border-radius: 25px;
+}
+.bradius{
+  border-radius:10px;
+}
+
+.imgBlur {
+  -webkit-filter: blur(10px);
+}
+.imgChosen{
+  border: 2px solid #39e600 !important;
+  box-shadow: 0px 0px 20px #333 !important;
+}
+
+/*Modal inlogging prompt*/
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 400px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #337ab7;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * the following styles are auto-applied to elements with
+ * v-transition="modal" when their visiblity is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter, .modal-leave {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

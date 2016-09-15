@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/bootstrap-slider.js"></script></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/css/bootstrap-slider.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/bootstrap-slider.min.js"></script>
+</head>
+<body>
+<%include templates/header.ejs%>
+<div class="container body-content">
+    <h1><%= title %></h1>
+    <div class="row">
+    <div class="col-md-8">
+    <p>
+        Search results for the search: "<%=search%>".
+    </p>
+    </div>
+    <div class="col-md-4">
+        <div class="col-md-12">
+            <form method="get" action="/search" enctype='multipart/form-data'>
+                <div class="input-group">
+                    <input type="text" name="search" value="" placeholder="Search pictures..." class="form-control">
+                    <br>
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn btn-primary" value="Search">
+                </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <hr>
+    <%if(images.length ==0 && error==null){%>
+    <p>
+        No results to show for this search.
+    </p>
+    <%}else{%>
+    <p>
+        <%=error%>
+    </p>
+    <%}%>
+    <%images.forEach(function(image){ %>
+    <img id='<%-image.imageId%>' class="image" alt="some tags" width="200" onclick="setHandlers(<%=image.Jstring%>)" src='<%-image.url%>'>
+
+    <div id='<%-image.modalId%>' class="modal" onclick="closeModal('<%=image.modalId%>')">
+
+        <span class="glyphicon glyphicon-remove close"></span>
+
+        <div class="loader"></div>
+        <img class="modal-content" id='<%-image.modalImg%>'>
+
+        <div id='<%-image.captionId%>' class="caption">
+            <div class="row">
+                <button class="btn btn-primary" onclick="transformImg('',<%=image.Jstring%>)">Original</button>
+                <button class="btn btn-primary" onclick="transformImg('grayscale',<%=image.Jstring%>)">Greyscale</button>
+                <button class="btn btn-primary" onclick="transformImg('blackwhite',<%=image.Jstring%>)">Blackwhite</button>
+                <button class="btn btn-primary" onclick="transformImg('oil_paint:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Oil paint</button>
+                <button class="btn btn-primary" onclick="transformImg('hue:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Hue</button>
+                <button class="btn btn-primary" onclick="transformImg('improve',<%=image.Jstring%>)">Improve</button>
+                <button class="btn btn-primary" onclick="transformImg('sepia:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Sepia</button>
+                <button class="btn btn-primary" onclick="transformImg('tilt_shift:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Tilt shift</button>
+                <br><br>
+                <button class="btn btn-primary" onclick="transformImg('gradient_fade:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Gradient fade</button>
+                <button class="btn btn-primary" onclick="transformImg('saturation:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Saturation</button>
+                <button class="btn btn-primary" onclick="transformImg('pixelate:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Pixelate</button>
+                <button class="btn btn-primary" onclick="transformImg('pixelate_faces:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Pixelate faces</button>
+                <button class="btn btn-primary" onclick="transformImg('redeye',<%=image.Jstring%>)">Remove red eyes</button>
+                <button class="btn btn-primary" onclick="transformImg('art:incognito',<%=image.Jstring%>)">Artistic</button>
+                <button class="btn btn-primary" onclick="transformImg('gamma:'+$('#<%=image.sliderId%>').val(),<%=image.Jstring%>)">Gamma</button>
+                <hr>
+            </div>
+            <br>
+            <div class="row">
+                <input id='<%-image.sliderId%>' data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
+                <button class="btn btn-danger" onclick="del('<%=image.publicId%>')">Delete</button>
+                <button class="btn btn-warning" onclick="publish('<%=image.imageId%>')">Publish</button>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+<hr>
+    <p>CAB432 project - Eirik Baug</p>
+</div>
+<script  type="text/javascript" src="/javascripts/PictureModal.js"></script>
+</body>
+</html>
