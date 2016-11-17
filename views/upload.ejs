@@ -8,12 +8,12 @@
 <body>
 <%include templates/header.ejs%>
 <div class="container body-content">
-<h1><%= title %></h1>
+    <h1><%= title %></h1>
 <p>Uploaded image(s):</p>
     <hr>
     <%if(images == null){%>
     <p>
-        No images was uploaded
+        <%= error %>
     </p>
     <%} else{%>
     <% images.forEach(function(image){ %>

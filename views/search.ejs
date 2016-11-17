@@ -8,11 +8,52 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/bootstrap-slider.js"></script></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/css/bootstrap-slider.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+
 </head>
 <body>
 <%include templates/header.ejs%>
 <div class="container body-content">
-    <h1><%= title %></h1>
+    <div class="row">
+        <div class="col-md-8">
+            <h1><%= title %></h1>
+        </div>
+        <div class="col-md-4">
+            <br><br>
+            <label>You must be logged in with imgur to publish albums</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>All images in the cloud (up to a maximum of 500).</p>
+            <p id="imgLink"></p>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-6">
+                <div id="app">
+                    <button id="show-modal" class="btn btn-primary" @click="showModal = true">Login with Imgur</button>
+                    <modal :show.sync="showModal">
+                        <h3 slot="header">Login with imgur</h3>
+                        <h5 slot="body">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="text" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                        </h5>
+                    </modal>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" onclick="PublishAlbum()">Publish album</button>
+            </div>
+        </div>
+    </div>
+    <br>
+
     <div class="row">
     <div class="col-md-8">
     <p>
@@ -75,9 +116,10 @@
             </div>
             <br>
             <div class="row">
+                <button class="btn btn-warning" onclick="addToAlbum('<%=image.imageId%>','<%=image.modalImg%>',this)">Add to album</button>
+                <button class="btn btn-warning" onclick="publish('<%=image.imageId%>')">Publish</button>
                 <input id='<%-image.sliderId%>' data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50"/>
                 <button class="btn btn-danger" onclick="del('<%=image.publicId%>')">Delete</button>
-                <button class="btn btn-warning" onclick="publish('<%=image.imageId%>')">Publish</button>
             </div>
         </div>
     </div>
@@ -85,6 +127,39 @@
 <hr>
     <p>CAB432 project - Eirik Baug</p>
 </div>
+<!-- Modal script component -->
+<script type="x/template" id="modal-template">
+    <div class="modal-mask" v-on:click="close" v-show="show" transition="modal">
+        <div class="modal-wrapper">
+            <div class="modal-container" v-on:click.stop>
+
+                <div class="modal-header">
+                    <slot name="header">
+                    </slot>
+                </div>
+
+                <div class="modal-body">
+                    <slot name="body">
+                        default body
+                    </slot>
+                </div>
+
+                <div class="modal-footer">
+                    <slot name="footer">
+                        <button class="btn btn-primary"
+                                @click="close">
+                            Cancel
+                        </button>
+                        <button class="btn btn-primary"
+                                @click="submit">
+                            Login
+                        </button>
+                    </slot>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
 <script  type="text/javascript" src="/javascripts/PictureModal.js"></script>
 </body>
 </html>

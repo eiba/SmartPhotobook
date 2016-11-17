@@ -20,12 +20,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-cloudinary.config({
+cloudinary.config({       //configures the cloudinary api
   cloud_name: 'dscvu5guq',
   api_key: '632251757841728',
   api_secret: 'mUgqTldpuGCa_QMjRq-cZWIJvM4'
 });
-imgur.setClientId('9ac3ab4bea0c50a');
+imgur.setClientId('9ac3ab4bea0c50a');   //configures imgur
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
